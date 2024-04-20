@@ -12,6 +12,7 @@ public class Main {
 
         dispositivos = new ArrayList<>();
         int opcion = 0;
+        int identificacion;
         String item;
         Scanner scanner = new Scanner(System.in);
 
@@ -82,6 +83,17 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("ingrese el id de el item a modifcar : ");
+                    identificacion = scanner.nextInt();
+                    System.out.println("Nombre de item :");
+                    dispositivos.get(identificacion).setNombre(scanner.nextLine());
+                    System.out.println("Modelo de item :");
+                    dispositivos.get(identificacion).setModelo(scanner.nextLine());
+                    System.out.println("descripcion de item :");
+                    dispositivos.get(identificacion).setDescripcion(scanner.next());
+                    System.out.println("Precio de item : ");
+                    dispositivos.get(identificacion).setPrecio(scanner.nextDouble());
+                    System.out.println("cantidad en inventario: ");
+                    dispositivos.get(identificacion).setcantidadDeInventario(scanner.nextInt());
 
                     break;
                 case 3:
