@@ -6,7 +6,7 @@ public abstract class  Electronicos {
     protected String descripcion;
     protected double precio;
 
-    protected long ID;
+    protected long ID=0;
 
 
 

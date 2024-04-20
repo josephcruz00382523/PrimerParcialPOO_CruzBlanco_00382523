@@ -1,26 +1,42 @@
-public class computadora extends Electronicos {
+public class computadora extends Electronicos  implements Precio{
 
-    private int cantidadEninventario;
+    private int cantidadEnInventario;
     private int cantidadPorVender;
 
+    public computadora() {
+    }
 
-    public boolean Precio(){
-       double total = 0;
+    public computadora(int cantidadEninventario, int cantidadPorVender) {
+        this.cantidadEnInventario = cantidadEninventario;
+        this.cantidadPorVender = cantidadPorVender;
+    }
 
-        if (cantidadEninventario - cantidadPorVender> 0){
+    public int getCantidadEnInventario() {
+        return cantidadEnInventario;
+    }
 
-         total =    cantidadPorVender*precio;
+    public void setCantidadEnInventario(int cantidadEnInventario) {
+        this.cantidadEnInventario = cantidadEnInventario;
+    }
 
-            System.out.println("El total es : $");
+    @Override
+    public boolean precio() {
+        double total=0;
+        if (cantidadEnInventario - cantidadPorVender> 0){
 
-         return true;
+            total =    cantidadPorVender*precio;
+
+            System.out.println("El total es : $"+total);
+
+            return true;
         }else {
             System.out.println("No hay suficientes en inventario para proceder con la venta");
             return false;
         }
     }
 
-    public void mostrarDescripcion(){
+    @Override
+    public void MostrarDescripcion() {
         System.out.print(descripcion);
     }
 }
